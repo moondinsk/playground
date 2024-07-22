@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP scrollTrigger test</title>
+    <style>
+        #box1{width:50px;height:50px;background-color:red;border-radius:10px;}
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <a href="https://www.youtube.com/watch?v=_rAAY_Zp4FI&t=24s">01. GSAP Parallax Effect : 기본 애니메이션(feat. scrollTrigger) | 웹스토리보이</a>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<!-- <script>
+    // use a script tag or an external JS file
+    document.addEventListener("DOMContentLoaded", (event) => {
+        gsap.registerPlugin(ScrollTrigger)
+        // gsap code here!
+    });
+</script> -->
+<script>
+    // gsap 기본애니메이션
+    const box1 = document.querySeletor("#box1");
+    gsap.to(box1, {
+        scrollTrigger :{ //트리거를 걸어놓지 않으면 해당섹션이 아닌 그냥 ready 하자 마자 애니메이션 실행됨
+            trigger: box1,
+            // toggleActions: onEnter onLeave onEnterBack onLeaveBack, - option 요소값:play pause reverse reset restart complete none
+            toogleActions: "play pause reverse none",
+            markers:true, //가이드 마커 on/off
+            id:"box1", //해당 녀석 가이드로 보여줌       
+            scrub:true, //스크롤 값에 따라 움직임? //true, 1, 0.5 ...
+            start:"top 50%",
+            end:"top 100px", 
+            toggleClass:"active",
+            pin:true,    
+            // 각 상태?마다 콜백함수 넣기가능 onEnter, onLeave, onEnterBack, onLeaveBack, onUpdate, onToggle ...
+            onEnter : () => {console.log("들어왔을때")},
+            onUpdate : (self) => {console.log("onUpdate", self.progress.toFixed(3))},
+            onToggle: (self) => {console.log("onToggle", self.isActive)},
+        }
+    })
+</script>
+</html>
