@@ -5,6 +5,8 @@ import {
 } from './webgl'
 
 if (WEBGL.isWebGLAvailable()) {
+
+  
   // 장면 생성
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x004fff);
@@ -20,6 +22,8 @@ if (WEBGL.isWebGLAvailable()) {
 
   // 렌더러 사이즈 지정
   renderer.setSize(window.innerWidth, window.innerHeight);
+
+
 
   function render(time) {
     time *= 0.001;  // convert time to seconds
