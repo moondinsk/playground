@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/1_mouseevent.css"></link>
+    
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+  <!-- UI -->
+  <!--// UI -->
+
+  <!-- Main -->
+  <div class="main">
+    <div class="main__sec-wrap swiper">
+      <div class="swiper-wrapper">
+        <section class="main__sec swiper-slide">
+          <h2 class="sr-only">Projects</h2>
+          <button type="button" class="view-more">
+            <span class="view-more__span">View more <i class="xi-plus-min"></i></span>
+          </button>
+        </section>
+        <section class="main__sec swiper-slide">
+          <h2 class="sr-only">Projects</h2>
+          <button type="button" class="view-more">
+            <span class="view-more__span">View more <i class="xi-plus-min"></i></span>
+          </button>
+        </section>
+        <section class="main__sec swiper-slide">
+          <h2 class="sr-only">Projects</h2>
+          <button type="button" class="view-more">
+            <span class="view-more__span">View more <i class="xi-plus-min"></i></span>
+          </button>
+        </section>
+        <section class="main__sec swiper-slide">
+          <h2 class="sr-only">Projects</h2>
+          <button type="button" class="view-more">
+            <span class="view-more__span">View more <i class="xi-plus-min"></i></span>
+          </button>
+        </section>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  <!--// Main -->
+
+  <!-- GIFT -->
+  
+  <!--// GIFT -->
+
+</body>
+<script>
+  
+  // Main Setting
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    loop: true,
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+
+  // 슬라이드 변경 
+  swiper.on('slideChange', function () {
+    const realIndex = swiper.realIndex;
+  });
+
+
+</script>
+</html>
