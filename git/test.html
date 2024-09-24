@@ -15,5 +15,30 @@
     push -> The branch "branch-test" has no remote branch. Would you like to publish this branch? 라고 뜸 
             repository에도 없음 당연함
     5th commit 
+    또 물어봄 오케이 가보자고
+    헤엑 풀리퀘스트  create 할꺼냐 물어봄
+    ㅡㅡㅡㅡㅡㅡㅡ 브랜치 지움 Your local changes will be lost, do you want to continue? y ㅡㅡㅡㅡ
+
+    지우고 나니 이 브랜치에서 했던 작업이 사라졋다
+    대신에 풀받으니까 다시생김
+
+    아 그리고 중간중간 커밋한 이름들은 남긴하는거같다
+
+    *reset, revert test
+    6commit 후 git reset bb409230 (풀리퀘스트한 지점) 하니까 
+    6commit 기록은 사라졋으나 수정한 내용은 살아있다!  
+            git reset ${WANT_COMMIT}   - 수정내용 살려서 커밋 기록 지우고 돌아가기
+            git reset --hard ${WANT_COMMIT}  - 수정내용 걍 다 버리고 커밋기록 지우고 돌아가기
+
+            (주의) reset을 통한 커밋 취소(삭제)는 모든 브랜치에서 커밋을 삭제하는 것이 아닌 현재 내가 있는 브랜치가 기준이 됩니다 . 라는데 이해는 잘 안됨
+
+    7commit branch 를 만들어 새로 커밋ㅎㅐ보자
+            push하면서 새브랜치 올릴거냐 물어보길래 오케이 함
+            pull request 에 해당 커밋 올라감
+    8 commit 하흠 올리고 돌릴거임 revert 7번쨰
+            (git revert c9419ddf)
+            source control graph는 돌아갓는디 terminal이 먼가 주황글씨로  error: could not revert c9419dd... 7th commit ㅇㅣ게뜸.. 된겨만겨;
+            근데 다시 돌ㅇㅏ가긴 핸듯.? 아닌가 /.. 졸려 이제 잘거임 집중도안딘디;암튼.. 커밋 기록 남기고 돌아가는게 revert 인거같음 ㅎ
+
 </body>
 </html>
